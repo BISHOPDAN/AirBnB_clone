@@ -169,7 +169,6 @@ The recognizable commands by the interpreter are the following:
 
 ## Authors
 
-Daniel Successful Chuma | Email: [Daniel](juliusdaniel554@gmail.com)
-Ogunjemiyo Olubunmi | Email: [Olubunmi](bjemiyor@gmail.com)
+Daniel Successful Chuma | Email: [Daniel](mailto:juliusdaniel554@gmail.com)
 
- | Github: []()
+Ogunjemiyo Olubunmi | Github: [bunmijemiyo](mailto:bjemiyor@gmail.com)

@@ -12,14 +12,19 @@ class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter."""
 
     prompt = "(hbnb) "
-
+    
     def default(self, line):
         """Catch commands if nothing else matches then."""
         # print("DEF:::", line)
         self._precmd(line)
+    
 
     
-    
+    def help_help(self):
+        """ Prints help command description """
+        print("Provides description of a given command")
+
+        
 
     def _precmd(self, line):
         """Intercepts commands to test for class.syntax()"""

@@ -2,6 +2,7 @@
 """Module for the entry point of the command interpreter."""
 
 import cmd
+from models.base_model import BaseModel
 from models import storage
 import re
 import json
@@ -12,19 +13,11 @@ class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter."""
 
     prompt = "(hbnb) "
-    
+
     def default(self, line):
         """Catch commands if nothing else matches then."""
         # print("DEF:::", line)
         self._precmd(line)
-    
-
-    
-    def help_help(self):
-        """ Prints help command description """
-        print("Provides description of a given command")
-
-        
 
     def _precmd(self, line):
         """Intercepts commands to test for class.syntax()"""
@@ -80,6 +73,16 @@ class HBNBCommand(cmd.Cmd):
                     setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
 
+    def do_EOF(self, line):
+        """Handles End Of File character.
+        """
+        print()
+        return True
+
+    def do_quit(self, line):
+        """Exits the program.
+        """
+        return True
 
     def emptyline(self):
         """Doesn't do anything on ENTER.
@@ -210,14 +213,6 @@ class HBNBCommand(cmd.Cmd):
                         pass  # fine, stay a string then
                 setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
-
-    def do_quit(self, line):
-        """ Quit command to exit the command interpreter """
-        return True
-
-    def do_EOF(self, line):
-        """ EOF command to exit the command interpreter """
-        return True
 
 
 if __name__ == '__main__':
